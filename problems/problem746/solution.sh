@@ -4,7 +4,7 @@
 # Title: Min Cost Climbing Stairs
 # Difficulty: Easy
 # Link: https://leetcode.com/problems/n-th-tribonacci-number/?envType=study-plan-v2&envId=dynamic-programming
-# Last Executed: Sat, 2023-07-29 15:50:30 AEST
+# Last Executed: Sat, 2023-07-29 15:58:39 AEST
 
 # Function to calculate the minimum cost to reach the top floor
 # Arguments:

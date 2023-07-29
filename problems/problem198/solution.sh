@@ -4,7 +4,7 @@
 # Title: House Robber
 # Difficulty: Medium
 # Link: https://leetcode.com/problems/house-robber/?envType=study-plan-v2&envId=dynamic-programming
-# Last Executed: Sat, 2023-07-29 15:50:30 AEST
+# Last Executed: Sat, 2023-07-29 15:58:39 AEST
 
 # Function to calculate the maximum amount of money you can rob without alerting the police
 # Arguments:

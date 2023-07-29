@@ -12,13 +12,15 @@ function extract_title() {
 #   $1: The problem number
 function execute_problem_script() {
   local problem_number=$1
-  local problem_script="problems/problem${problem_number}.sh"
+  local problem_directory="problems/problem${problem_number}"
 
-  # Check if the problem file exists
-  if [ ! -f "$problem_script" ]; then
-    echo "Error: $problem_script not found."
+  # Check if the problem directory exists
+  if [ ! -d "$problem_directory" ]; then
+    echo "Error: $problem_directory not found."
     return
   fi
+
+  local problem_script="$problem_directory/solution.sh"
 
   # Check if the problem file is executable, if not, make it executable
   if [ ! -x "$problem_script" ]; then
@@ -51,6 +53,14 @@ function execute_problem_script() {
   printf "─%.0s" $(seq 1 "$separator_length")
   echo
 
+  # Extract the input from the problem file (if available)
+  local input
+  local input_color="\033[38;2;243;139;168m"
+  input=$(grep -Po "(?<=# Input: ).*" "$problem_script")
+  if [ -n "$input" ]; then
+    echo -e "[${input_color}${bold} Input ${reset}]${normal} $input"
+  fi
+
   # Get the current time
   local time_executed
   time_executed=$(date +"%a, %Y-%m-%d %H:%M:%S %Z")
@@ -62,14 +72,6 @@ function execute_problem_script() {
   else
     # If "# Link:" does not exist or "# Last Executed:" does not exist, append the "Last Executed" line below the "# Link:" line
     sed -i "/# Link:/a # Last Executed: $time_executed" "$problem_script"
-  fi
-
-  # Extract the input from the problem file (if available)
-  local input
-  local input_color="\033[38;2;243;139;168m"
-  input=$(grep -Po "(?<=# Input: ).*" "$problem_script")
-  if [ -n "$input" ]; then
-    echo -e "[${input_color}${bold} Input ${reset}]${normal} $input"
   fi
 
   # Execute the problem script and capture the output
@@ -94,11 +96,11 @@ argument=$1
 # Check if the argument is "all"
 if [ "$argument" = "all" ]; then
   # Execute all problem scripts in the "problems/" directory
-  for problem_script in problems/problem*.sh; do
-    if [ -x "$problem_script" ]; then
-      # Get the problem number from the file name (e.g., "problems/problem123.sh" -> "123")
-      problem_number=${problem_script#problems/problem}
-      problem_number=${problem_number%.sh}
+  for problem_directory in problems/problem*; do
+    if [ -x "$problem_directory/solution.sh" ]; then
+      # Get the problem number from the directory name (e.g., "problems/problem123" -> "123")
+      problem_number=${problem_directory#problems/problem}
+      problem_number=${problem_number%/}
 
       execute_problem_script "$problem_number"
       echo
