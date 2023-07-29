@@ -2,8 +2,9 @@
 
 # Problem 740
 # Title: Delete and Earn
+# Difficulty: Medium
 # Link: https://leetcode.com/problems/delete-and-earn/?envType=study-plan-v2&envId=dynamic-programming
-# Last Executed: Sat, 2023-07-29 14:26:45 AEST
+# Last Executed: Sat, 2023-07-29 15:50:30 AEST
 
 # Function to check if an element exists in an array
 # Arguments:
