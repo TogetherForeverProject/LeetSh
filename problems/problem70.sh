@@ -2,8 +2,9 @@
 
 # Problem 70
 # Title: Climbing Stairs
+# Difficulty: Easy
 # Link: https://leetcode.com/problems/climbing-stairs/?envType=study-plan-v2&envId=dynamic-programming
-# Last Executed: Sat, 2023-07-29 06:41:54 AEST
+# Last Executed: Sat, 2023-07-29 14:26:45 AEST
 
 # Recursive function to calculate the number of distinct ways to climb n steps
 # Arguments:

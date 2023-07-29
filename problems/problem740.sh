@@ -3,7 +3,7 @@
 # Problem 740
 # Title: Delete and Earn
 # Link: https://leetcode.com/problems/delete-and-earn/?envType=study-plan-v2&envId=dynamic-programming
-# Last Executed: Sat, 2023-07-29 06:41:54 AEST
+# Last Executed: Sat, 2023-07-29 14:26:45 AEST
 
 # Function to check if an element exists in an array
 # Arguments:

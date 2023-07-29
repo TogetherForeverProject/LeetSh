@@ -3,7 +3,7 @@
 # Problem 198
 # Title: House Robber
 # Link: https://leetcode.com/problems/house-robber/?envType=study-plan-v2&envId=dynamic-programming
-# Last Executed: Sat, 2023-07-29 06:41:54 AEST
+# Last Executed: Sat, 2023-07-29 14:26:45 AEST
 
 # Function to calculate the maximum amount of money you can rob without alerting the police
 # Arguments:
